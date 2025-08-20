@@ -6,7 +6,58 @@
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
     h1, h2 { color: #2c3e50; }
-    a { color: #2980b9; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    
+    .project-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+    
+    .project-link {
+      display: inline-block;
+      background-color: #2980b9;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+    
+    .project-link:hover {
+      background-color: #1a5d8a;
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -14,13 +65,35 @@
   <p>I'm a data analyst / developer with experience in Python, SQL, and Tableau.</p>
 
   <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>SQL + Chatbot Project</strong><br>
-      <a href="https://github.com/chaul3/chat-bot-sql-generator-for-business">View on GitHub</a>
-    </li>
-
-  </ul>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="anomaly_detection_results.png" alt="Anomaly Detection Project" class="project-image">
+      <div class="project-title">Anomaly Detection Project</div>
+      <p>Machine learning fraud detection system using advanced anomaly detection algorithms.</p>
+      <a href="https://github.com/chaul3/aml-fraud-detection" class="project-link">View on GitHub</a>
+    </div>
+    
+    <div class="project-card">
+      <img src="chatbot-interface.png" alt="SQL Chatbot Project" class="project-image">
+      <div class="project-title">SQL + Chatbot Project</div>
+      <p>Interactive chatbot that generates SQL queries for business analytics and data retrieval.</p>
+      <a href="https://github.com/chaul3/chat-bot-sql-generator-for-business" class="project-link">View on GitHub</a>
+    </div>
+    
+    <div class="project-card">
+      <img src="duck-mainpage.png" alt="The Duck's School App" class="project-image">
+      <div class="project-title">The Duck's School App</div>
+      <p>Los Angeles recommendation system providing personalized suggestions and insights.</p>
+      <a href="https://github.com/chaul3/LA-Rec-Sys" class="project-link">View on GitHub</a>
+    </div>
+    
+    <div class="project-card">
+      <embed src="rof_curve_turning_points.pdf" type="application/pdf" class="project-image" style="height: 200px;">
+      <div class="project-title">ROF ResNet18 Cancer Analysis</div>
+      <p>Retrieval of Function (ROF) analysis on cancer dataset using ResNet18 deep learning model.</p>
+      <a href="https://github.com/chaul3/rof-resnet18-cancer-dataset" class="project-link">View on GitHub</a>
+    </div>
+  </div>
 
   <h2>Contact</h2>
   <p>Email: chau.le.business@gmail.com<br>
