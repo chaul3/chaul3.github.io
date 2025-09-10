@@ -9,6 +9,48 @@
     a { color: #2980b9; text-decoration: none; }
     a:hover { text-decoration: underline; }
     
+    /* --- Hamburger Menu Styles --- */
+    .nav-container {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #2c3e50;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 0.5rem;
+      z-index: 10;
+    }
+
+    .menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #2c3e50;
+    }
+
+    .menu a:hover {
+      background: #f0f0f0;
+    }
+
+    .menu.show {
+      display: block;
+    }
+    
+    /* --- Project Grid --- */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -61,10 +103,15 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> | 
-    <a href="cv.html">CV</a>
+  <!-- Hamburger Nav -->
+  <nav class="nav-container">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+    </div>
   </nav>
+
   <h1>Hello, I'm Chau Le</h1>
   <p>I'm a data analyst / developer with experience in Python, SQL, and Tableau.</p>
 
@@ -107,7 +154,6 @@
       <p>Bias mitigation in Natural Language Inference with methods like ERM, Last Layer Retraining, Just Train Twice, and SELF. Focuses on reducing spurious correlations from negation words.</p>
       <a href="https://github.com/chaul3/MultiNLI-bias" class="project-link">View on GitHub</a>
     </div>
-
   </div>
 
   <h2>More Projects</h2>
@@ -116,5 +162,18 @@
   <h2>Contact</h2>
   <p>Email: chau.le.business@gmail.com<br>
      LinkedIn: <a href="https://www.linkedin.com/in/chaule0702/">linkedin.com/in/chaule0702</a></p>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Close menu when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.hamburger')) {
+        document.getElementById("menu").classList.remove("show");
+      }
+    }
+  </script>
 </body>
 </html>
