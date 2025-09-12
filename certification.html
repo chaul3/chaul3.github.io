@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certifications - Chau Le</title>
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
+    h1, h2 { color: #2c3e50; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    
+    /* --- Hamburger Menu Styles --- */
+    .nav-container {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #2c3e50;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 0.5rem;
+      z-index: 10;
+    }
+
+    .menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #2c3e50;
+    }
+
+    .menu a:hover {
+      background: #f0f0f0;
+    }
+
+    .menu.show {
+      display: block;
+    }
+    
+    /* --- Certification Styles --- */
+    .cert-container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .cert-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cert-logo {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .cert-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-provider {
+      font-size: 1.2em;
+      color: #27ae60;
+      margin-bottom: 1rem;
+    }
+
+    .course-list {
+      margin: 1.5rem 0;
+    }
+
+    .course-item {
+      background: #f8f9fa;
+      border-left: 4px solid #2980b9;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+    }
+
+    .course-name {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .course-description {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .cert-link {
+      display: inline-block;
+      background-color: #27ae60;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .cert-link:hover {
+      background-color: #219a52;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hamburger Nav -->
+  <nav class="nav-container">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="certification.html">Certifications</a>
+    </div>
+  </nav>
+
+  <h1>Certifications</h1>
+  <p>My professional certifications and completed learning tracks.</p>
+
+  <div class="cert-container">
+    <div class="cert-header">
+      <img src="datacamp.png" alt="DataCamp Logo" class="cert-logo">
+      <div class="cert-title">Data Scientist Professional Track</div>
+      <div class="cert-provider">DataCamp</div>
+    </div>
+
+    <h3>Track Overview</h3>
+    <p>Completed comprehensive Data Science Professional track covering AI applications, machine learning, data manipulation, and advanced programming techniques using Python and modern AI tools.</p>
+
+    <h3>Courses Completed</h3>
+    <div class="course-list">
+      <div class="course-item">
+        <div class="course-name">Working with the OpenAI API</div>
+        <div class="course-description">Developing AI-powered applications with the OpenAI API functionality</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Prompt Engineering with the OpenAI API</div>
+        <div class="course-description">Principles and best practices of prompt engineering for language models</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Planning a Trip to Paris with the OpenAI API</div>
+        <div class="course-description">Practical application of OpenAI API for tourist information queries</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Working with Hugging Face</div>
+        <div class="course-description">Navigate and use extensive repository of models and datasets</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">LLMOps Concepts</div>
+        <div class="course-description">LLMOps lifecycle from ideation to deployment and application challenges</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Developing AI Systems with the OpenAI API</div>
+        <div class="course-description">Getting AI applications ready for production deployment</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Organizing Medical Transcriptions with the OpenAI API</div>
+        <div class="course-description">Extract structured data from unstructured natural language in medical texts</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Introduction to Embeddings with the OpenAI API</div>
+        <div class="course-description">Advanced AI applications including semantic search and recommendation engines</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Topic Analysis of Clothing Reviews with Embeddings</div>
+        <div class="course-description">Analyze clothing reviews to explore topics and similarities using embeddings</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Vector Databases for Embeddings with Pinecone</div>
+        <div class="course-description">Using Pinecone vector database for AI application development</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Software Engineering Principles in Python</div>
+        <div class="course-description">Modularity, documentation, and automated testing for data science</div>
+      </div>
+
+      <div class="course-item">
+        <div class="course-name">Developing LLM Applications with LangChain</div>
+        <div class="course-description">Build AI-powered applications using LLMs, prompts, chains, and agents</div>
+      </div>
+    </div>
+
+    <div class="cert-header">
+      <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/4cc29e0fb08d354c44a889e88aceb081e5d4b9c4" 
+         class="cert-link" target="_blank">View Certificate</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Close menu when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.hamburger')) {
+        document.getElementById("menu").classList.remove("show");
+      }
+    }
+  </script>
+</body>
+</html>
