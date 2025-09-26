@@ -248,34 +248,60 @@
   <!-- LinkedIn Learning RAG Certification -->
   <div class="cert-container">
     <div class="cert-header">
-      <img src="linkedin-learning-logo.png" alt="LinkedIn Learning Logo" class="cert-logo">
+      <img src="linkedlin-rag.png" alt="LinkedIn Learning Logo" class="cert-logo">
       <div class="cert-title">Master Retrieval-Augmented Generation (RAG)</div>
       <div class="cert-provider">LinkedIn Learning</div>
-      <div class="cert-duration">14 hours • 7 courses • Completed September 25, 2025</div>
+      <div class="cert-duration">60 hours • 7 courses • Completed September 25, 2025</div>
     </div>
 
     <div class="cert-summary">
       <p><strong>Advanced Learning Path:</strong> Comprehensive training on retrieval-augmented generation techniques, vector databases integration with large language models, and multimodal RAG solutions.</p>
     </div>
 
-    <h3>Key Skills Learned</h3>
-    <div class="course-list">
-      <div class="course-item">
-        <div class="course-name">RAG and Vector Database Concepts</div>
-        <div class="course-description">Fundamentals of retrieval-augmented generation and vector database architecture</div>
-      </div>
-      <div class="course-item">
-        <div class="course-name">Text-based and Multimodal RAG Optimization</div>
-        <div class="course-description">Advanced techniques for chunking, embedding, and metadata optimization</div>
-      </div>
-      <div class="course-item">
-        <div class="course-name">RAG Solution Design and Deployment</div>
-        <div class="course-description">Building and deploying cutting-edge RAG applications with performance evaluation</div>
+    <button class="expand-btn" onclick="toggleLinkedInDetails()">View All Courses (7)</button>
+
+    <div class="course-details" id="linkedinDetails">
+      <h3>Courses Completed</h3>
+      <div class="course-list">
+        <div class="course-item">
+          <div class="course-name">RAG and Fine-Tuning Explained</div>
+          <div class="course-description">Fundamentals of retrieval-augmented generation and fine-tuning concepts</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Vector Databases in Practice: Deep Dive</div>
+          <div class="course-description">In-depth exploration of vector database implementation and optimization</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Generative AI: Introduction to Large Language Models</div>
+          <div class="course-description">Comprehensive overview of LLM architecture and applications</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">LLM Foundations: Vector Databases for Caching and Retrieval Augmented Generation (RAG)</div>
+          <div class="course-description">Advanced vector database techniques for caching and RAG optimization</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Advanced RAG Applications with Vector Databases</div>
+          <div class="course-description">Building sophisticated RAG systems with advanced vector database integration</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Building RAG Solutions with Azure AI Foundry (Formerly Azure AI Studio)</div>
+          <div class="course-description">Deploying RAG applications using Microsoft Azure AI platform</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Hands-On AI: RAG using LlamaIndex</div>
+          <div class="course-description">Practical implementation of RAG systems using LlamaIndex framework</div>
+        </div>
       </div>
     </div>
 
     <div class="cert-header">
-      <a href="#" class="cert-link" target="_blank">View Certificate</a>
+      <a href="https://www.linkedin.com/learning/certificates/506efad510f7300b4d89d83d6647acab314e596ead24a82d38fb757e968e3e16?trk=share_certificate" class="cert-link" target="_blank">View Certificate</a>
     </div>
   </div>
 
@@ -378,6 +404,20 @@
       } else {
         details.classList.add("show");
         button.textContent = "Hide Course Details";
+      }
+    }
+
+    function toggleLinkedInDetails() {
+      const details = document.getElementById("linkedinDetails");
+      const buttons = document.querySelectorAll(".expand-btn");
+      const linkedinButton = buttons[0]; // First expand button is for LinkedIn
+      
+      if (details.classList.contains("show")) {
+        details.classList.remove("show");
+        linkedinButton.textContent = "View All Courses (7)";
+      } else {
+        details.classList.add("show");
+        linkedinButton.textContent = "Hide Course Details";
       }
     }
 
