@@ -121,6 +121,114 @@
       color: white;
       text-decoration: none;
     }
+
+     .cert-container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .cert-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cert-logo {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .cert-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-provider {
+      font-size: 1.2em;
+      color: #27ae60;
+      margin-bottom: 1rem;
+    }
+
+    .cert-summary {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .expand-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+
+    .expand-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .course-details {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .course-details.show {
+      display: block;
+    }
+
+    .course-list {
+      margin: 1.5rem 0;
+    }
+
+    .course-item {
+      background: #f8f9fa;
+      border-left: 4px solid #2980b9;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+    }
+
+    .course-name {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .course-description {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .cert-link {
+      display: inline-block;
+      background-color: #27ae60;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .cert-link:hover {
+      background-color: #219a52;
+      color: white;
+      text-decoration: none;
+    }
+
+    .cert-duration {
+      color: #666;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
@@ -137,6 +245,41 @@
   <h1>Certifications</h1>
   <p>My professional certifications and completed learning tracks.</p>
 
+  <!-- LinkedIn Learning RAG Certification -->
+  <div class="cert-container">
+    <div class="cert-header">
+      <img src="linkedin-learning-logo.png" alt="LinkedIn Learning Logo" class="cert-logo">
+      <div class="cert-title">Master Retrieval-Augmented Generation (RAG)</div>
+      <div class="cert-provider">LinkedIn Learning</div>
+      <div class="cert-duration">14 hours • 7 courses • Completed September 25, 2025</div>
+    </div>
+
+    <div class="cert-summary">
+      <p><strong>Advanced Learning Path:</strong> Comprehensive training on retrieval-augmented generation techniques, vector databases integration with large language models, and multimodal RAG solutions.</p>
+    </div>
+
+    <h3>Key Skills Learned</h3>
+    <div class="course-list">
+      <div class="course-item">
+        <div class="course-name">RAG and Vector Database Concepts</div>
+        <div class="course-description">Fundamentals of retrieval-augmented generation and vector database architecture</div>
+      </div>
+      <div class="course-item">
+        <div class="course-name">Text-based and Multimodal RAG Optimization</div>
+        <div class="course-description">Advanced techniques for chunking, embedding, and metadata optimization</div>
+      </div>
+      <div class="course-item">
+        <div class="course-name">RAG Solution Design and Deployment</div>
+        <div class="course-description">Building and deploying cutting-edge RAG applications with performance evaluation</div>
+      </div>
+    </div>
+
+    <div class="cert-header">
+      <a href="#" class="cert-link" target="_blank">View Certificate</a>
+    </div>
+  </div>
+
+  <!-- DataCamp Certification -->
   <div class="cert-container">
     <div class="cert-header">
       <img src="datacamp.png" alt="DataCamp Logo" class="cert-logo">
@@ -144,81 +287,98 @@
       <div class="cert-provider">DataCamp</div>
     </div>
 
-    <h3>Track Overview</h3>
-    <p>Completed comprehensive Data Science Professional track covering AI applications, machine learning, data manipulation, and advanced programming techniques using Python and modern AI tools.</p>
+    <div class="cert-summary">
+      <p><strong>Professional Track:</strong> Comprehensive data science training covering AI applications, machine learning, and advanced programming techniques using Python and modern AI tools.</p>
+    </div>
 
-    <h3>Courses Completed</h3>
-    <div class="course-list">
-      <div class="course-item">
-        <div class="course-name">Working with the OpenAI API</div>
-        <div class="course-description">Developing AI-powered applications with the OpenAI API functionality</div>
-      </div>
+    <button class="expand-btn" onclick="toggleCourseDetails()">View All Courses (12)</button>
 
-      <div class="course-item">
-        <div class="course-name">Prompt Engineering with the OpenAI API</div>
-        <div class="course-description">Principles and best practices of prompt engineering for language models</div>
-      </div>
+    <div class="course-details" id="courseDetails">
+      <h3>Courses Completed</h3>
+      <div class="course-list">
+        <div class="course-item">
+          <div class="course-name">Working with the OpenAI API</div>
+          <div class="course-description">Developing AI-powered applications with the OpenAI API functionality</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Planning a Trip to Paris with the OpenAI API</div>
-        <div class="course-description">Practical application of OpenAI API for tourist information queries</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Prompt Engineering with the OpenAI API</div>
+          <div class="course-description">Principles and best practices of prompt engineering for language models</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Working with Hugging Face</div>
-        <div class="course-description">Navigate and use extensive repository of models and datasets</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Planning a Trip to Paris with the OpenAI API</div>
+          <div class="course-description">Practical application of OpenAI API for tourist information queries</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">LLMOps Concepts</div>
-        <div class="course-description">LLMOps lifecycle from ideation to deployment and application challenges</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Working with Hugging Face</div>
+          <div class="course-description">Navigate and use extensive repository of models and datasets</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Developing AI Systems with the OpenAI API</div>
-        <div class="course-description">Getting AI applications ready for production deployment</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">LLMOps Concepts</div>
+          <div class="course-description">LLMOps lifecycle from ideation to deployment and application challenges</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Organizing Medical Transcriptions with the OpenAI API</div>
-        <div class="course-description">Extract structured data from unstructured natural language in medical texts</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Developing AI Systems with the OpenAI API</div>
+          <div class="course-description">Getting AI applications ready for production deployment</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Introduction to Embeddings with the OpenAI API</div>
-        <div class="course-description">Advanced AI applications including semantic search and recommendation engines</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Organizing Medical Transcriptions with the OpenAI API</div>
+          <div class="course-description">Extract structured data from unstructured natural language in medical texts</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Topic Analysis of Clothing Reviews with Embeddings</div>
-        <div class="course-description">Analyze clothing reviews to explore topics and similarities using embeddings</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Introduction to Embeddings with the OpenAI API</div>
+          <div class="course-description">Advanced AI applications including semantic search and recommendation engines</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Vector Databases for Embeddings with Pinecone</div>
-        <div class="course-description">Using Pinecone vector database for AI application development</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Topic Analysis of Clothing Reviews with Embeddings</div>
+          <div class="course-description">Analyze clothing reviews to explore topics and similarities using embeddings</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Software Engineering Principles in Python</div>
-        <div class="course-description">Modularity, documentation, and automated testing for data science</div>
-      </div>
+        <div class="course-item">
+          <div class="course-name">Vector Databases for Embeddings with Pinecone</div>
+          <div class="course-description">Using Pinecone vector database for AI application development</div>
+        </div>
 
-      <div class="course-item">
-        <div class="course-name">Developing LLM Applications with LangChain</div>
-        <div class="course-description">Build AI-powered applications using LLMs, prompts, chains, and agents</div>
+        <div class="course-item">
+          <div class="course-name">Software Engineering Principles in Python</div>
+          <div class="course-description">Modularity, documentation, and automated testing for data science</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Developing LLM Applications with LangChain</div>
+          <div class="course-description">Build AI-powered applications using LLMs, prompts, chains, and agents</div>
+        </div>
       </div>
     </div>
 
     <div class="cert-header">
-      <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/4cc29e0fb08d354c44a889e88aceb081e5d4b9c4" 
-         class="cert-link" target="_blank">View Certificate</a>
+      <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/4cc29e0fb08d354c44a889e88aceb081e5d4b9c4" class="cert-link" target="_blank">View Certificate</a>
     </div>
   </div>
 
   <script>
     function toggleMenu() {
       document.getElementById("menu").classList.toggle("show");
+    }
+
+    function toggleCourseDetails() {
+      const details = document.getElementById("courseDetails");
+      const button = document.querySelector(".expand-btn");
+      
+      if (details.classList.contains("show")) {
+        details.classList.remove("show");
+        button.textContent = "View All Courses (12)";
+      } else {
+        details.classList.add("show");
+        button.textContent = "Hide Course Details";
+      }
     }
 
     // Close menu when clicking outside
